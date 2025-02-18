@@ -1,9 +1,8 @@
 const fs = require('fs').promises;
 const path = require('path');
 const Archiver = require('./archiver.js');
-const { log } = require('console');
 
-class Json2csv {
+class Json2Csv {
   constructor(jsonFilePath, fields) {
     this.jsonFilePath = jsonFilePath;
     this.fields = fields;
@@ -40,7 +39,7 @@ class Json2csv {
   console.log(__dirname);
   const jsonFilePath = 'data/comments.json'; // Path to JSON file
   const fields = ['postId', 'name', 'body']; // Fields to include in CSV
-  const converter = new Json2csv(jsonFilePath, fields);
+  const converter = new Json2Csv(jsonFilePath, fields);
   await converter.saveToFile('../data/output.csv');
 
   const archiver = new Archiver();
